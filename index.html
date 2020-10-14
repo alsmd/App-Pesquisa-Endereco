@@ -28,10 +28,10 @@
 				}
 				//Requisitando o CEP de uma API
 				let ajax = new XMLHttpRequest();
-				ajax.open("GET","https://viacep.com.br/ws/"+CEP+"/json/");
+				ajax.open("GET","https://viacep.com.br/ws/"+CEP+"/json/unicode");
 
 				ajax.onreadystatechange = function(){
-					if(ajax.readyState == 4){
+					if(ajax.readyState == 4 && ajax.status == 200){
 						info = ajax.response;
 						info = JSON.parse(info);
 						if(info.erro){
